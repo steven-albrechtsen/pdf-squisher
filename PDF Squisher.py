@@ -62,38 +62,38 @@ class Application(Frame):
     def loadMainWindow(self):
 
         self.browse_file = Button(self, text='Select File(s)', command=self.select_files)
-        self.browse_file.grid(row=0, column=1, rowspan=2, padx=5, pady=5)
+        self.browse_file.grid(row=1, column=1, rowspan=2, padx=5, pady=5)
 
         self.dpi_label = Label(self, text="DPI - Dots Per Inch.")
-        self.dpi_label.grid(row=0, column=3)
+        self.dpi_label.grid(row=1, column=3)
 
         self.dpi = StringVar(self)
         self.dpi.set("150")
 
         self.dpi_option_menu = OptionMenu(self, self.dpi, "75 - Grainy image, smallest file", "150 - Balanced", "200 - Sharper image, biggest file")
-        self.dpi_option_menu.grid(row=0, column=4, padx=5, pady=5)
+        self.dpi_option_menu.grid(row=1, column=4, padx=5, pady=5)
 
         self.contrast_label = Label(self, text="Contrast - Lower is darker, higher is lighter")
-        self.contrast_label.grid(row=1, column=3)
+        self.contrast_label.grid(row=2, column=3)
 
         self.contrast = StringVar(self)
         self.contrast.set("75")
 
         self.contrast_option_menu = OptionMenu(self, self.contrast, '5', '15', '25', '35', '45', '55', '65', '75', '85', '95')
-        self.contrast_option_menu.grid(row=1, column=4, padx=5, pady=5)
+        self.contrast_option_menu.grid(row=2, column=4, padx=5, pady=5)
 
         self.compress = Button(self, text='Compress PDF(s)', background="green", command=self.compress_pdfs)
-        self.compress.grid(row=0, column=5, rowspan=2, padx=5, pady=5)
+        self.compress.grid(row=4, column=3, rowspan=2, padx=5, pady=5)
 
         self.file_list = Listbox(self, height=5, width=80)
-        self.file_list.grid(row=2, column=1, columnspan=5, padx=5, pady=5)
+        self.file_list.grid(row=0, column=1, columnspan=5, padx=5, pady=5)
 
         self.QUIT = Button(self)
         self.QUIT["text"] = "QUIT"
         self.QUIT["fg"]   = "red"
         self.QUIT["command"] =  self.quit
 
-        self.QUIT.grid(row=3, column=3, padx=5, pady=5)
+        self.QUIT.grid(row=4, column=5, padx=5, pady=5)
 
 
 
